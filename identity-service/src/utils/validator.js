@@ -9,5 +9,13 @@ import Joi from "joi";
 
     return registerSchema.validate(schema);
 }
+ function validateLoginUser(schema) {
+    const loginSchema = Joi.object({
+         password: Joi.string().min(8).max(30).required(),
+        email: Joi.string().email().required(),
+    });
 
-export { validateRegisterUser };
+    return loginSchema.validate(schema);
+}
+
+export { validateRegisterUser , validateLoginUser};

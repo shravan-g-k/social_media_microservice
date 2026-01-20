@@ -1,0 +1,32 @@
+{"level":"info","message":"API Gateway running on port 3000","service":"api-gateway"}
+{"level":"info","message":"Identity Service URL: http://localhost:3001","service":"api-gateway"}
+{"level":"info","message":"Redis Host: redis://localhost:6379","service":"api-gateway"}
+{"level":"info","message":"POST /v1i/auth/register","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/register","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /register: 400","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/register","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /register: 201","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 500","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 200","service":"api-gateway"}
+{"level":"info","message":"POST /v1/auth/login","service":"api-gateway"}
+{"level":"info","message":"Response from Identity Service for POST /login: 200","service":"api-gateway"}

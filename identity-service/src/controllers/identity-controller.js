@@ -1,6 +1,6 @@
 import { generateToken } from "../utils/generateToken.js";
 import logger from "../utils/logger.js";
-import {validateRegisterUser} from "../utils/validator.js";
+import {validateLoginUser, validateRegisterUser} from "../utils/validator.js";
 import User from "../models/User.js";
 const registerUser = async(req,res)=>{
     logger.info("Register user endpoint");
@@ -45,4 +45,55 @@ const registerUser = async(req,res)=>{
 
 }
 
-export {registerUser};
+const loginUser = async(req,res)=>{
+    logger.info("Login user endpoint");
+    try {
+        const {error} = validateLoginUser(req.body);
+        if (error) {
+            logger.warn("Validation error", error.details[0].message);
+            return res.status(400).json({
+                success: false,
+                message: error.details[0].message
+            })
+        }
+
+        const {email,password} = req.body;
+
+        const user = await User.findOne({email});
+
+        if(!user){
+            logger.warn("User doesnt exist");
+            return res.status(400).json({
+                message : "Invalid credentials",
+                success : false
+            });
+        }
+        
+        const isValidPassword = await user.comparePassword(password);
+        if(!isValidPassword){
+            logger.warn("Wrong password");
+            return res.status(400).json({
+                message : "Wrong Password",
+                success : false
+            });
+        }
+
+        const {accessToken,refreshToken} = await generateToken(user);
+
+        res.json({
+            accessToken,
+            refreshToken,
+            userId : user._id
+        });
+        
+    } catch (error) {
+        logger.error("Error logging in user",error);
+        res.status(500).json({
+            success : false,
+            message : "Internal server error"
+        })
+    }
+
+}
+
+export {registerUser, loginUser};
