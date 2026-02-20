@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 
 const sensitiveEndpointRateLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 5,
+    max: 500,
     standardHeaders: true,
     legacyHeaders: false,
     handler: (req, res) => {
